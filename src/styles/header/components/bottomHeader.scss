@@ -1,0 +1,248 @@
+@import '../../color';
+.bottomHeader {
+  font-size: 13px;
+  line-height: 15px;
+  color: $baseColor;
+  background: $bg-bottomHeader;
+  position: relative;
+}
+.wrapper-b {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.burger-menu {
+  display: block;
+  width: 20px;
+  height: 14px;
+  position: relative;
+  cursor: pointer;
+}
+.burger-menu span {
+  transition: background 0s 0.3s;
+}
+.burger-menu span, .burger-menu span:before, .burger-menu span:after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -1px;
+  transition: all 0.4s linear;
+}
+
+.burger-menu span:before, .burger-menu span:after {
+  content: '';
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+.burger-menu span:before {
+  transform: translateY(-5px);
+  transition-property: top, transform;
+}
+.burger-menu span:after {
+  transform: translateY(5px);
+  transition-property: bottom, transform;
+}
+.burger-menu.show span {
+  background: none;
+}
+.burger-menu.show span:before {
+  transform: rotate(45deg);
+
+}
+.burger-menu.show span:after {
+  transform: rotate(-45deg);
+}
+.burger-menu.show span:before,
+.burger-menu.show span:after {
+  transition-delay: 0s, 0.3s;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+.menu > li {
+  margin-right: 26px;
+}
+.menu > li:last-child {
+  margin-right: 0;
+}
+
+.menu > li > a {
+  text-decoration: none;
+  color: $baseColor;
+  letter-spacing: 0.07em;
+  transition: 0.2s ease;
+}
+.menu > li > a:hover {
+  color: #fc2460;
+}
+input {
+  outline: none;
+  border: none;
+}
+.search-desktop {
+  width: 400px;
+  padding: 10px 2.8em 11px 17px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  letter-spacing: 0.07em;
+  font-size: 13px;
+  line-height: 15px;
+}
+.search-black {
+  width: 30px;
+  position: relative;
+  left: -2.8em;
+  vertical-align: middle;
+}
+input::-webkit-input-placeholder { color: #3D3D3C; }
+input::-moz-placeholder { color: #3D3D3C; }
+.like {
+  cursor: pointer;
+}
+
+
+
+.basket-price {
+  position: absolute;
+  background: #E7003E;
+  top: 63px;
+  right: 0;
+  width: 77px;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 106.8%;
+  text-align: center;
+  padding-bottom: 23px;
+  display: none;
+}
+.buy {
+  padding: 30px;
+  background: #E7003E;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    .basket-price {
+      display: block;
+    }
+  }
+}
+.basket {
+  width: 17px;
+  height: 17px;
+}
+.search-white {
+  display: none;
+}
+.info_icon {
+  display: none;
+  cursor: pointer;
+}
+.user {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1420px) {
+  .search-desktop {
+    width: 200px;
+  }
+}
+@media (max-width: 1280px) {
+  .menu > li {
+    margin-right: 10px;
+  }
+  .logo-img {
+    width: 150px;
+    height: 35px;
+  }
+  .logo {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 1024px) {
+  .wrapper-b {
+    padding: 0 0 0 20px;
+  }
+  .search-desktop {
+    display: none;
+  }
+  .like {
+    display: none;
+  }
+  .buy {
+    padding: 13.5px;
+    margin-left: 11px;
+  }
+  .basket {
+    width: 15px;
+    height: 15px;
+  }
+  .buy {
+    &:hover {
+      .basket-price {
+        display: none;
+      }
+    }
+  }
+  .search-black {
+    display: none;
+  }
+  .search-white {
+    background: url("../images/header/search_white.svg") no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+  .logo {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .topHeader {
+    display: none;
+  }
+  .content-header nav {
+    display: none;
+  }
+  .info_icon {
+    display: block;
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+  .user {
+    display: block;
+  }
+  .burger-menu {
+    width: 18px;
+    height: 14px;
+  }
+  .burger-menu span, .burger-menu span:before, .burger-menu span:after {
+    width: 18px;
+    margin-left: -9px;
+  }
+  .logo {
+    margin-right: 18px;
+  }
+  .logo-img {
+    width: 132px;
+    height: 20.95px;
+  }
+  .bottomHeader {
+    padding: 0;
+  }
+
+}
